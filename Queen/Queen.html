@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="queen.css">
+    <link rel="stylesheet" href="font.css">
+    <link rel="stylesheet" href="flex.css">
+    <link rel="icon" href="images/favicon1.png" type="image/x-icon">
+
+    <style>
+      br {
+        margin-bottom: 50px; /* Add margin below the line break */
+        /* or */
+        margin-top: 50px; /* Add padding below the line break */
+      }
+    </style>
+      
+      
+      
+      
+
+    <title>Queen</title>
+</head>
+
+<body>
+   <!-- change video to iframe if have time to -->
+
+    <!-- video-container is the size/position of the video -->
+<div class="video-container" id="Queen">
+    <!-- myvideo id controls when it plays/stops in view -->
+    <video id="myVideo" controls autoplay>
+        <source src="Queen-video.mp4" type="video/mp4">
+    </video>
+</div>
+
+<script>
+// videoObserver.observe(video);
+var video = document.getElementById('myVideo');
+var videoObserver;
+var isVideoMuted = true;
+
+// Function to handle the video visibility change
+function handleVideoVisibility(entries) {
+  entries.forEach(function(entry) {
+    if (entry.isIntersecting) {
+      // Video is in the viewport, unmute and play it
+      video.muted = true;
+      video.play();
+      isVideoMuted = true;
+    } else {
+      // Video is out of the viewport, mute and pause it
+      if (!isVideoMuted) {
+        video.muted = true;
+        isVideoMuted = true;
+      }
+      video.pause();
+    }
+  });
+}
+
+// Create a new IntersectionObserver
+videoObserver = new IntersectionObserver(handleVideoVisibility);
+
+// Observe the video element
+videoObserver.observe(video);
+</script>
+
+<nav>
+ <ul class="font2">
+   <li style="font-family: QueenInlineGrunge;"><a href="#Queen">Queen</a></li>
+   <li><a href="#About">About</a></li>
+   <li><a href="#Members">Members</a></li>
+   <li><a href="#Music">Music</a></li>
+   <li><a href="#Gallery">Gallery</a></li>
+   <li><a href="#Socials">Contact</a></li>
+  </ul>
+</nav>
+
+<div class="divider" id="About"></div>
+
+<div class="flex-container">
+    <h1 class="font1">About</h1>
+ <div>
+   <p class="font2">Queen are a British rock band formed in London in 1970 by Freddie Mercury (lead vocals, piano), Brian May (guitar, vocals), Roger Taylor (drums, vocals), and later joined by John Deacon (bass).
+    <br>
+    Their earliest works were influenced by progressive rock, hard rock and heavy metal, but the band gradually ventured into more conventional and radio-friendly works by incorporating further styles, such as arena rock and pop rock. The band's 1977 album <b>News of the World</b> contained <b>"We Will Rock You"</b> and <b> "We Are the Champions"</b>, which have become anthems at sporting events. By the early 1980s, Queen were one of the biggest stadium rock bands in the world. <b>"Another One Bites the Dust" </b> from The Game (1980) became their best-selling single, while their 1981 compilation album <b>Greatest Hits</b> is the best-selling album in the UK and is certified nine times platinum in the US. 
+    <br>
+    <br>
+    Though he kept his condition private, Mercury was diagnosed with AIDS in 1987. The band released two more albums, <b>The Miracle</b> in 1989 and <b>Innuendo</b> in 1991. On 23rd November 1991, Mercury publicly revealed that he had AIDS, and the next day died of bronchopneumonia, a complication of AIDS. One more album was released featuring Mercury's vocal, 1995's <b>Made in Heaven</b>. John Deacon retired in 1997, while May and Taylor continued to make sporadic appearances together. Since 2004 they have toured as "Queen +", with vocalists Paul Rodgers and Adam Lambert.
+   </p>
+   <img src="images/Queen-group.jpg" alt="Queen Band Members">
+ </div>
+</div>
+
+<div class="divider" id="Members"></div>
+
+<div class="flex-container2">
+    <h1 class="font1">Members</h1>
+ <div class="flex1 font2">
+  <img src="images/Freddie.jpg" alt="Freddie Mercury" class="img-marg1">
+   <div class="text">
+    <h2 style="align-self: first baseline;">Freddie Mercury</h2>
+
+    <p>
+      Freddie Mercury was a British singer and songwriter, who achieved worldwide fame as the lead vocalist of the rock band Queen.
+      Mercury was know for his flamboyant stage persona and four octave vocal range. Mercury defied the conventions of a rock frontman
+      with his threatricial style, influencing the artisitic direction of Queen. Mercury wrote numerous hits for Queen, including <b>"Killer Queen"</b>, 
+      <b>"Bohemian Rhapsody"</b>, <b>"Somebody to Love"</b>, <b>"We Are the Champions"</b>, <b>"Don't Stop Me Now"</b> and <b>"Crazy Little Thing Called Love"</b>.
+      <br>
+      <br>
+     Mercury was disgnosed with AIDS in 1987. He continued to record with Queen, and posthumously featured on their final album,
+      <b>"Made in Heaven"</b> (1995). In 1991, the day after announcing his diagnosis, he died from
+      complications of the disease, at the age of 45.
+      In 1992, a concert in tribute to him was held at wembely stadium, in benefit of AIDS awareness.
+    </p>
+   </div>
+ </div>
+
+ <div class="flex2 font2">
+  <img src="images/brian-mayyy.jpg" alt="Brian May" class="img-marg2">
+  <div class="text">
+   <h2 style="align-self: first baseline;">Brian May</h2>
+
+   <p>Brian May is a British musician, singer, songwriter and astrophysicist. He achieved worldwide fame as the lead guitarist of the rock band Queen,
+     which he co-founded with singer Freddie Mercury and drummer Roger Taylor. His guitar work amd songwriting contricutions helped Queen become
+     one of the most succesful acts in music history.
+     <br>
+     <br>
+     As a memeber of Queen, May became regarded as a virtuoso musician, identified with distinctive sound created through his layered guitar work, often
+     using home-built electric guitar called the Red Special. May wrote numerous hits for Queen, including <b>"We Will Rock You</b>, <b>"I Want It All"</b>,
+     <b>"Fat Bottomed Girls"</b>, <b>"Flash"</b>, <b>"Hammer To Fall"</b>, <b>"Save Me"</b>, <b>"Who Wants To Live Forever"</b>, <b>"Too Much Love Will Kill You"</b>, and
+     <b>"The Show Must Go On"</b>.
+     <br>
+     <br>
+     Following the death of Mercury in 1991, aside from the 1992 tribute concert, the release of Made in Heaven (1995) and the 1997 tribute single to Mercury,
+     "No-One but You (Only the Good Die Young)" (written by May), Queen were put on hiatus for several years but were eventually reconvened by May and Taylor 
+     for further performances featuring other vocalists.
+   </p>
+  </div>
+ </div>
+
+ <div class="flex3 font2">
+  <img src="images/Roger.jpg" alt="Roger Taylor" class="img-marg1">
+  <div class="text">
+   <h2 style="align-self: first baseline;">Roger Taylor</h2>
+
+   <p>Roger Taylor is an English musician, singer and songwriter. He achieved international fame as the drummer for the rock band Queen.[1] As a drummer,
+    Taylor was recognised early in his career for his unique sound[2] and was voted the eighth-greatest drummer in classic rock music history in a listener 
+    poll conducted by Planet Rock in 2005.[3] He was inducted into the Rock and Roll Hall of Fame in 2001 as a member of Queen.
+    <br>
+    <br>
+    As a songwriter, Taylor composed at least one track on every Queen album, and often sang lead vocals on his own compositions. He wrote or co-wrote 
+    three UK number ones,<b>"These Are The Days Of Our Lives"</b>, <b>"Innuendo"</b> and <b>"Under Pressure"</b>. Taylor also wrote a further five major hits 
+    <b>"Radio GA GA"</b>, <b>"A Kind Of Magic"</b>, <b>"Heaven For Everyone"</b>, <b>"Breathru"</b>, and <b>"The Invisible Man"</b>. He was also the main writer on the 
+    international top-ten hit <b>"One Vision"</b>, although the track is credited to the whole band
+  
+   </p>
+  </div>
+ </div>
+
+ <div class="flex4 font2"> 
+  <img src="images/John-Deacon.jpg" alt="John Deacon" class="img-marg2">
+  <div class="text">
+   <h2 style="align-self: flex-start;">John Deacon</h2>
+
+   <p style="align-items: flex-end;">John Deacon is an English retired musician, best known for being the bass guitarist for the rock band Queen. He wrote several songs for the group, including 
+    Top 10 hits <b>"You're My Best Friend"</b>, <b>"Another One Bites the Dust"</b> and <b>"I Want to Break Free"</b>; co-wrote <b>"Under Pressure"</b>, <b>"Friends Will Be Friends"</b> 
+    and <b>"One Vision"</b>; and he was involved in the band's financial management.
+    <br>
+    <br>
+    He joined Queen in 1971 on the strength of his musical and electronic skills, 
+    particularly the home-made Deacy Amp which guitarist Brian May used to create guitar orchestras throughout Queen's career. From the third album, 
+    Sheer Heart Attack, onwards, he wrote at least one song per album, several of which became hits. As well as bass guitar, Deacon played some guitar, 
+    keyboards and piano on Queen's studio work. 
+    <br>
+    <br>
+    After the death of lead singer Freddie Mercury in 1991 and the following year's Tribute Concert, Deacon 
+    performed only sporadically with the remaining members of Queen before retiring from the music industry in 1997 after recording "No-One but You 
+    <b>"Only the Good Die Young"</b>.
+  
+   </p>
+ </div>
+</div>
+</div>
+
+<div class="divider" id="Music"></div>
+
+<div class="flex-container3">
+  <iframe src="https://open.spotify.com/embed/artist/1dfeR4HaWDbWqFHLkxsg1d?utm_source=generator" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+</div>
+
+<div class="divider" id="Gallery"></div>
+
+<div class="flex-container4">
+  <h1 class="font1">Gallery</h1>
+  <div class="gallery-container">
+   <div class="Gallery">
+     <img src="images/King.jpg" alt="Freddie as a king Of Rock" width="300">
+   </div>
+
+   <div class="Gallery">
+     <img src="images/Unknown-17.jpg" alt="John Deacon with guitar" width="250">
+   </div>
+
+   <div class="Gallery">
+     <img src="images/Unknown-15.jpg" alt="John Deacon with short hair" width="330">
+   </div>
+
+   <div class="Gallery">
+     <img src="images/1971.jpg" alt="Freddie Mercury shapes" width="350">
+   </div>
+
+   <div class="Gallery">
+     <img src="images/Unknown-13.jpg" alt="Brian May" width="200">
+   </div>
+
+   <div class="Gallery">
+     <img src="images/Roger-Taylor.jpg" alt="Roger" width="300">
+   </div>
+
+   <div class="Gallery">
+     <img src="images/Unknown-12.jpg" alt="Brian May2" width="400">
+   </div>
+
+   <div class="Gallery">
+     <img src="images/Unknown-11.jpg" alt="Roger Taylor" width="300" >
+   </div>
+
+   <div class="Gallery">
+     <img src="images/KillerQueen.png" alt="Freddies" width="300">
+   </div>
+
+   <div class="Gallery">
+     <img src="images/☆Queen-2.jpg" alt="Queen Band" width="300">
+   </div>
+
+   <div class="Gallery">
+     <img src="images/JeanGenie.png" alt="Woman Freddie" width="300">
+   </div>
+
+</div>
+<div>
+   <button class="gallery-button font3">See More</button>
+   </div>
+
+  </div>
+
+
+
+<div class="divider" id="Socials"></div>
+
+<div>
+  <footer>
+<h1 class="font1">Contact</h1>
+  <a href="https://twitter.com/queenrockband?lang=en"><img src="images/Asset 3font.png" alt="Twitter" style="width: 55px;"></a>
+  <a href="https://www.instagram.com/officialqueenmusic/?hl=en"><img src="images/Asset 2font.png" alt="Insragram" style="width: 55px;"></a>
+  <a href="https://www.facebook.com/Queen/"><img src="images/Asset 1font.png" alt="Facebook" style="width: 55px;"></a>
+  <a href="https://www.youtube.com/channel/UCiMhD4jzUqG-IgPzUmmytRQ"><img src="images/Asset 5font.png" alt="Youtube" style="width: 55px;"></a>
+  <a href="https://www.tiktok.com/@queenofficial"><img src="images/Asset 4font.png" alt="Tiktock" style="width: 55px;"></a>
+  </footer>
+</div>
+
+
+</body>
+</html>
